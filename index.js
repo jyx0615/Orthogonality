@@ -246,9 +246,15 @@ function drawIntegral() {
 function draw() {
     const freqL = parseInt(freqLeftNum.value, 10) || 1;
     drawGraph(ctxL, canvasL, funcLeft.value, freqL);
+    const eqLeft = document.getElementById('equationLeft');
+    eqLeft.innerText = `y = ${funcLeft.value}(${freqL}x)`;
+    eqLeft.style.color = funcLeft.value === 'sin' ? colors.sin : colors.cos;
 
     const freqR = parseInt(freqRightNum.value, 10) || 1;
     drawGraph(ctxR, canvasR, funcRight.value, freqR);
+    const eqRight = document.getElementById('equationRight');
+    eqRight.innerText = `y = ${funcRight.value}(${freqR}x)`;
+    eqRight.style.color = funcRight.value === 'sin' ? colors.sin : colors.cos;
 }
 
 function drawCombined() {

@@ -8,12 +8,16 @@
     <link rel="stylesheet" href="./index.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="icon" type="image/png" href="./favicon.png">
 </head>
 
 <body>
     <h1>Orthogonality of Sine and Cosine</h1>
     <div class="tab-nav">
-        <a href="proofs.html" class="tab-btn active">Mathematical Proofs</a>
+        <a href="proofs.html" class="tab-btn">
+            <span class="text-lg">Mathematical Proofs</span>
+            <span class="text-sm">Proofs</span>
+        </a>
         <a href="index.html" class="tab-btn">Visualizer</a>
         <a href="tutorial.html" class="tab-btn">Tutorial</a>
     </div>
@@ -22,13 +26,13 @@
         <h2 class="proof-title">Core Orthogonality Equations</h2>
 
         <div class="equations-overview">
-            <div style="text-align: left; line-height: 2; max-width: 600px; margin: 0 auto;">
-                <p><strong>1. </strong> \(\displaystyle \int_{-\pi}^{\pi} \sin(mx) \cos(nx) dx = 0 \)</p>
-                <p><strong>2. </strong> \(\displaystyle \int_{-\pi}^{\pi} \sin(mx) \sin(nx) dx = \begin{cases} 0, &
-                    \text{for } m \neq n \\ \pi, & \text{for } m = n \neq 0 \end{cases} \)</p>
-                <p><strong>3. </strong> \(\displaystyle \int_{-\pi}^{\pi} \cos(mx) \cos(nx) dx = \begin{cases} 0, &
-                    \text{for } m \neq n \\ \pi, & \text{for } m = n \neq 0 \end{cases} \)</p>
-            </div>
+            <ol class="equations-list">
+                <li>\(\displaystyle \int_{-\pi}^{\pi} \sin(mx) \cos(nx) dx = 0 \)</li>
+                <li>\(\displaystyle \int_{-\pi}^{\pi} \sin(mx) \sin(nx) dx = \begin{cases} 0, &
+                        \text{for } m \neq n \\ \pi, & \text{for } m = n \neq 0 \end{cases} \)</li>
+                <li>\(\displaystyle \int_{-\pi}^{\pi} \cos(mx) \cos(nx) dx = \begin{cases} 0, &
+                        \text{for } m \neq n \\ \pi, & \text{for } m = n \neq 0 \end{cases} \)</li>
+            </ol>
         </div>
 
         <details class="math-proof">

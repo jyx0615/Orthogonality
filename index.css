@@ -61,16 +61,7 @@ h1 {
 
 .panel-controls {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10px;
-    background: var(--panel-bg);
-    padding: 10px;
-    border-radius: 10px;
-}
-
-.control-group {
-    display: flex;
+    /* flex-wrap: wrap; */
     align-items: center;
     gap: 8px;
 }
@@ -92,13 +83,12 @@ input[type="number"]:focus {
 }
 
 input[type="number"] {
-    width: 60px;
+    width: 30px;
 }
 
 input[type="range"] {
     flex-grow: 1;
     accent-color: var(--accent-color);
-    min-width: 80px;
 }
 
 label {
@@ -112,7 +102,7 @@ label {
     width: 100%;
     /* Use simpler aspect ratio so squares don't visually explode horizontally */
     aspect-ratio: 2 / 1;
-    max-height: 200px;
+    max-height: 160px;
 }
 
 .canvas-container.wide {
@@ -123,11 +113,6 @@ canvas {
     display: block;
     width: 100%;
     height: 100%;
-}
-
-.generate-btn-container {
-    text-align: center;
-    margin-top: 20px;
 }
 
 #generateBtn {
@@ -146,26 +131,63 @@ canvas {
     background: var(--accent-hover);
 }
 
-#combinedPanelContainer {
+#combinedPanelContainer,
+#integralPanelContainer {
     display: none;
-    margin-top: 20px;
 }
 
-.combined-label {
-    text-align: center;
-    color: #fff;
-    font-weight: 600;
-    margin-bottom: 8px;
-    font-size: 0.95rem;
+.text-sm {
+    display: none;
+}
+
+.text-lg {
+    display: block;
 }
 
 @media (max-width: 850px) {
-    .graphs-wrapper {
-        grid-template-columns: 1fr;
+    .container {
+        padding: 10px;
     }
 
-    .canvas-container {
-        aspect-ratio: 16 / 9;
+    .graph-panel {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .tab-btn {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    select,
+    input[type="number"] {
+        font-size: 0.8rem;
+        padding: 4px 6px;
+    }
+
+    input[type="number"] {
+        width: 25px;
+    }
+
+    .equation-label {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .text-lg {
+        display: none;
+    }
+
+    .text-sm {
+        display: block;
+    }
+
+    input[type="range"] {
+        display: none;
     }
 }
 
@@ -269,10 +291,6 @@ details.math-proof[open] summary::after {
 }
 
 /* Additional Utility Classes extracted from inline CSS */
-.flex-grow {
-    flex-grow: 1;
-}
-
 .btn-primary {
     padding: 12px 24px;
     font-size: 1.1rem;
@@ -307,9 +325,45 @@ details.math-proof[open] summary::after {
     background: #059669;
 }
 
-.text-center-mt30 {
+/* --- Extracted Inline Styles --- */
+
+.equation-label {
     text-align: center;
-    margin-top: 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.equations-list {
+    text-align: left;
+    line-height: 2;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tutorial-container {
+    max-width: 800px;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    margin-top: 20px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 .text-center-mt20 {
@@ -361,6 +415,7 @@ details.math-proof[open] summary::after {
     font-size: 1.1rem;
     line-height: 2;
     border: 1px solid #334155;
+    overflow-x: auto;
 }
 
 .equations-overview h3 {
@@ -369,13 +424,8 @@ details.math-proof[open] summary::after {
     font-size: 1.2rem;
 }
 
-.equations-note {
-    font-size: 0.9rem;
-    color: #94a3b8;
-    margin-top: 10px;
-}
-
 .math-equation {
     text-align: center;
     font-style: italic;
+    overflow-x: auto;
 }
