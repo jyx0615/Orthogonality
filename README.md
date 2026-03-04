@@ -2,13 +2,9 @@
 
 An interactive educational web application designed to visually and mathematically demonstrate the orthogonality of sine and cosine functions.
 
-<div align="center">
-  <video src="./assets/demo.mov" controls="controls" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);"></video>
-</div>
+[![Watch the video](https://raw.githubusercontent.com/jyx0615/Orthogonality/main/assets/thumbnail.jpg)](https://raw.githubusercontent.com/jyx0615/Orthogonality/main/assets/demo.mp4)
 
-<div align="center">
-  <img src="./assets/equations.png" alt="Equations" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
-</div>
+![equations](assets/equations.png)
 
 ## 🚀 Live Demo
 Access the fully deployed application here: [https://jyx0615.github.io/Orthogonality/](https://jyx0615.github.io/Orthogonality/)
