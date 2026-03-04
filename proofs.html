@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Proofs - Orthogonality of Sine and Cosine</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <h1>Orthogonality of Sine and Cosine</h1>
+    <div class="tab-nav">
+        <a href="proofs.html" class="tab-btn active">Mathematical Proofs</a>
+        <a href="index.html" class="tab-btn">Visualizer</a>
+        <a href="tutorial.html" class="tab-btn">Tutorial</a>
+    </div>
+
+    <div class="container">
+        <h2 class="proof-title">Core Orthogonality Equations</h2>
+
+        <div class="equations-overview">
+            <div style="text-align: left; line-height: 2; max-width: 600px; margin: 0 auto;">
+                <p><strong>1. </strong> \(\displaystyle \int_{-\pi}^{\pi} \sin(mx) \cos(nx) dx = 0 \)</p>
+                <p><strong>2. </strong> \(\displaystyle \int_{-\pi}^{\pi} \sin(mx) \sin(nx) dx = \begin{cases} 0, &
+                    \text{for } m \neq n \\ \pi, & \text{for } m = n \neq 0 \end{cases} \)</p>
+                <p><strong>3. </strong> \(\displaystyle \int_{-\pi}^{\pi} \cos(mx) \cos(nx) dx = \begin{cases} 0, &
+                    \text{for } m \neq n \\ \pi, & \text{for } m = n \neq 0 \end{cases} \)</p>
+            </div>
+        </div>
+
+        <details class="math-proof">
+            <summary>Case 1: ∫ sin(mx) cos(nx) dx = 0</summary>
+            <div class="proof-content">
+                <p>We want to evaluate:</p>
+                <p class="math-equation">$$ I = \int_{-\pi}^{\pi} \sin(mx) \cos(nx) dx $$</p>
+                <p>Using the product-to-sum trigonometric identity:</p>
+                <p class="math-equation">$$ \sin(mx) \cos(nx) = \frac{1}{2}[\sin((m+n)x) + \sin((m-n)x)] $$</p>
+                <p>The integral becomes:</p>
+                <p class="math-equation">$$ I = \frac{1}{2} \int_{-\pi}^{\pi} \sin((m+n)x) dx + \frac{1}{2}
+                    \int_{-\pi}^{\pi} \sin((m-n)x) dx $$</p>
+                <p>Since the sine function is an odd function, integrating any sine function over a symmetric interval
+                    \( [-\pi, \pi] \) yields exactly \( 0 \).
+                </p>
+                <p>Thus, evaluating gives \( 0 + 0 = 0 \). This holds true for all integers \( m \) and \( n \).</p>
+            </div>
+        </details>
+
+        <details class="math-proof">
+            <summary>Case 2: ∫ sin(mx) sin(nx) dx</summary>
+            <div class="proof-content">
+                <p>We want to evaluate:</p>
+                <p class="math-equation">$$ I = \int_{-\pi}^{\pi} \sin(mx) \sin(nx) dx $$</p>
+                <p>Using the product-to-sum trigonometric identity:</p>
+                <p class="math-equation">$$ \sin(mx) \sin(nx) = \frac{1}{2}[\cos((m-n)x) - \cos((m+n)x)] $$</p>
+                <p><strong>Subcase A: \(m \neq n\)</strong></p>
+                <p>Integrating gives: \( \frac{1}{2} \left[ \frac{\sin((m-n)x)}{m-n} - \frac{\sin((m+n)x)}{m+n} \right]
+                    \) from \(-\pi\) to \(\pi\). Since \(\sin(k\pi) = 0\) for any integer \(k\), the terms evaluate to
+                    0. Thus, \(I = 0\).</p>
+                <p><strong>Subcase B: \(m = n \neq 0\)</strong></p>
+                <p>If \(m = n\), then \(\cos((m-n)x) = \cos(0) = 1\). The integral becomes: $$ \frac{1}{2}
+                    \int_{-\pi}^{\pi} [1 - \cos(2mx)] dx $$</p>
+                <p>Which evaluates to: $$ \frac{1}{2} \left[ x - \frac{\sin(2mx)}{2m} \right]_{-\pi}^{\pi} = \frac{1}{2}
+                    ( (\pi - 0) - (-\pi - 0) ) = \frac{1}{2}(2\pi) = \pi $$</p>
+            </div>
+        </details>
+
+        <details class="math-proof">
+            <summary>Case 3: ∫ cos(mx) cos(nx) dx</summary>
+            <div class="proof-content">
+                <p>We want to evaluate:</p>
+                <p class="math-equation">$$ I = \int_{-\pi}^{\pi} \cos(mx) \cos(nx) dx $$</p>
+                <p>Using the product-to-sum trigonometric identity:</p>
+                <p class="math-equation">$$ \cos(mx) \cos(nx) = \frac{1}{2}[\cos((m-n)x) + \cos((m+n)x)] $$</p>
+                <p><strong>Subcase A: \( m \neq n \)</strong></p>
+                <p>Similar to Sine, integrating yields sine terms which evaluate to 0 at bounds \(-\pi\) and \(\pi\).
+                    Thus, \( I = 0 \).
+                </p>
+                <p><strong>Subcase B: \( m = n \neq 0 \)</strong></p>
+                <p>If \( m = n \), the integral is $$ \frac{1}{2} \int_{-\pi}^{\pi} [1 + \cos(2mx)] dx $$ which
+                    similarly evaluates
+                    to exactly \( \pi \).</p>
+            </div>
+        </details>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Wave Visulaizer - Orthogonality of Sine and Cosine</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <h1>Orthogonality of Sine and Cosine</h1>
+    <div class="tab-nav">
+        <a href="proofs.html" class="tab-btn">Mathematical Proofs</a>
+        <a href="index.html" class="tab-btn active">Visualizer</a>
+        <a href="tutorial.html" class="tab-btn">Tutorial</a>
+    </div>
+
+    <!-- Main Visualizer Content -->
+    <div class="container">
+        <div class="graphs-wrapper">
+            <!-- Left Panel -->
+            <div class="graph-panel">
+                <div class="panel-controls">
+                    <div class="control-group">
+                        <select id="funcLeft">
+                            <option value="sin">Sine</option>
+                            <option value="cos">Cosine</option>
+                        </select>
+                    </div>
+                    <div class="control-group flex-grow">
+                        <label>Freq:</label>
+                        <input type="number" id="freqLeftNum" value="1" min="1" max="20" step="1">
+                        <input type="range" id="freqLeftSlider" value="1" min="1" max="20" step="1">
+                    </div>
+                </div>
+                <div class="canvas-container">
+                    <canvas id="canvasLeft"></canvas>
+                </div>
+            </div>
+
+            <!-- Right Panel -->
+            <div class="graph-panel">
+                <div class="panel-controls">
+                    <div class="control-group">
+                        <select id="funcRight">
+                            <option value="cos" selected>Cosine</option>
+                            <option value="sin">Sine</option>
+                        </select>
+                    </div>
+                    <div class="control-group flex-grow">
+                        <label>Freq:</label>
+                        <input type="number" id="freqRightNum" value="1" min="1" max="20" step="1">
+                        <input type="range" id="freqRightSlider" value="1" min="1" max="20" step="1">
+                    </div>
+                </div>
+                <div class="canvas-container">
+                    <canvas id="canvasRight"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center-mt30">
+            <button id="generateBtn" class="btn-primary">
+                Generate Combined Graph
+            </button>
+        </div>
+
+        <div id="combinedPanelContainer" class="mt-20" style="display: none;">
+            <div class="graph-panel">
+                <div class="panel-label" id="combinedLabel">
+                    Combined Graph
+                </div>
+                <div class="canvas-container wide">
+                    <canvas id="canvasCombined"></canvas>
+                </div>
+            </div>
+
+            <div class="text-center-mt20">
+                <button id="visualizeAreaBtn" class="btn-success">
+                    Visualize Area Under Curve
+                </button>
+            </div>
+
+            <div id="integralPanelContainer" class="mt-20" style="display: none;">
+                <div class="graph-panel">
+                    <div class="panel-label small-mb" id="integralLabel">
+                        Area Under Curve (Integration)
+                    </div>
+                    <div class="integral-result" id="integralValueDisplay">
+                        Result = 0.0000
+                    </div>
+                    <div class="canvas-container wide">
+                        <canvas id="canvasIntegral"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Script -->
+    <script src="./index.js"></script>
+</body>
+
+</html>
