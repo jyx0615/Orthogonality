@@ -34,8 +34,8 @@ const colors = {
 
 const MIN_X = -4;
 const MAX_X = 4;
-const MIN_Y = -1.5;
-const MAX_Y = 1.5;
+const MIN_Y = -1.2;
+const MAX_Y = 1.2;
 
 function resizeCanvases() {
     const panels = [canvasL, canvasR, canvasC, canvasI];
